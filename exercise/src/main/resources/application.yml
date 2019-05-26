@@ -1,0 +1,8 @@
+const:
+  reader:
+    dic-enable: true
+    dic:
+      dic-location: /static/data/dic.json # 配置字典数据文件路径 默认路径：/data/dic.json
+    censor-word-enable: true
+    censor-word:
+      censor-words-location: /static/data/censorWords.txt # 默认路径：/data/censorWords.txt

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+pers.zhzh.consts.spring.boot.autoconfigure.ConstReaderAutoConfigure
