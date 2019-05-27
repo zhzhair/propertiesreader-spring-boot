@@ -1,6 +1,7 @@
 package pers.zhzh.consts.spring.boot.autoconfigure.service;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import pers.zhzh.consts.spring.boot.autoconfigure.properties.ConstReaderProperties;
@@ -18,6 +19,7 @@ public class MultiDictionaryReader {
     private final Logger logger = Logger.getLogger(MultiDictionaryReader.class.getName());
 
     @Bean
+    @ConditionalOnMissingBean
     public MultiDictionaryBean getMultiDictionaryReader(){
         MultiDictionaryBean dictionaryBean = new MultiDictionaryBean();
         Boolean bool = constReaderProperties.getDicEnable();

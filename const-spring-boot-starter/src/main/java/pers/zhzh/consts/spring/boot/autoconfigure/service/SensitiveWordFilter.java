@@ -1,5 +1,6 @@
 package pers.zhzh.consts.spring.boot.autoconfigure.service;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import pers.zhzh.consts.spring.boot.autoconfigure.properties.ConstReaderProperties;
@@ -16,6 +17,7 @@ public class SensitiveWordFilter {
     private ConstReaderProperties constReaderProperties;
     private final Logger logger = Logger.getLogger(SensitiveWordFilter.class.getName());
     @Bean
+    @ConditionalOnMissingBean
     public SensitiveWordBean getSensitiveWord(){
         boolean bool = constReaderProperties.getCensorWordEnable();
         SensitiveWordBean sensitiveWordBean = new SensitiveWordBean();

@@ -1,6 +1,7 @@
 package pers.zhzh.consts.spring.boot.autoconfigure.service;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import pers.zhzh.consts.spring.boot.autoconfigure.properties.ConstReaderProperties;
@@ -17,6 +18,7 @@ public class DictionaryReader {
     private final Logger logger = Logger.getLogger(DictionaryReader.class.getName());
 
     @Bean
+    @ConditionalOnMissingBean
     public DictionaryBean getDictionaryReader(){
         DictionaryBean dictionaryBean = new DictionaryBean();
         Boolean bool = constReaderProperties.getDicEnable();

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pers.zhzh</groupId>
     <artifactId>const-dic-reader</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>const</name>
     <description>Demo project for Spring Boot const read from file</description>
     <url>https://github.com/zhzhair/spring-boot-starter-examples.git</url>
