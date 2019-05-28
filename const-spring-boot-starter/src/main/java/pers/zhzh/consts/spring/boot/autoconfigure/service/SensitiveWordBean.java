@@ -23,4 +23,8 @@ public class SensitiveWordBean {
         return CensorWordReaderUtil.getCensorWord(text,set);
     }
 
+    public String getCensorWordText(String text){
+        return CensorWordReaderUtil.getCensorWordText(text,set);
+    }
+
 }

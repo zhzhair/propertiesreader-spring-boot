@@ -32,6 +32,8 @@ public class ConstReaderProperties {
     public class CensorWord{
         private String censorWordsLocation = "/data/censorWords.txt";
         private Integer wordCount = 3000;
+        private boolean dfaEnabled = false;
+        private boolean iteratorEnabled = true;
         public String getCensorWordsLocation() {
             return censorWordsLocation;
         }
@@ -48,6 +50,21 @@ public class ConstReaderProperties {
             this.wordCount = wordCount;
         }
 
+        public boolean getDfaEnabled() {
+            return dfaEnabled;
+        }
+
+        public void setDfaEnabled(boolean dfaEnabled) {
+            this.dfaEnabled = dfaEnabled;
+        }
+
+        public boolean getIteratorEnabled() {
+            return iteratorEnabled;
+        }
+
+        public void setIteratorEnabled(boolean iteratorEnabled) {
+            this.iteratorEnabled = iteratorEnabled;
+        }
     }
 
     public Boolean getDicEnable() {

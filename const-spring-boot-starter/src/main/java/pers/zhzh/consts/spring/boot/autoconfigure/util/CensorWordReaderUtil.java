@@ -59,4 +59,19 @@ public class CensorWordReaderUtil {
         return set;
     }
 
+    /**
+     * 从文本中查询铭感词
+     * @param text 查询文本
+     * @param keyWordSet 敏感词的集合
+     * @return 敏感词的集合
+     */
+    public static String getCensorWordText(String text, Set<String> keyWordSet){
+        if(!hasCensorWord(text,keyWordSet)) return text;
+        Set<String> set = getCensorWord(text,keyWordSet);
+        String returnStr = text;
+        for (String string : set) {
+            returnStr = returnStr.replace(string,"**");
+        }
+        return returnStr;
+    }
 }

@@ -5,4 +5,5 @@ const:
       dic-location: /static/data/dic.json # 配置字典数据文件路径 默认路径：/data/dic.json
     censor-word-enable: true
     censor-word:
+      dfa-enabled: true  # dfa算法不适合中文过滤，在过滤英文敏感词时选用更佳
       censor-words-location: /static/data/censorWords.txt # 默认路径：/data/censorWords.txt

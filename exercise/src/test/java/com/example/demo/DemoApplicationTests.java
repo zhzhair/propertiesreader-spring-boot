@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import pers.zhzh.consts.spring.boot.autoconfigure.service.DFAsensitiveWordBean;
 import pers.zhzh.consts.spring.boot.autoconfigure.service.DictionaryBean;
 import pers.zhzh.consts.spring.boot.autoconfigure.service.MultiDictionaryBean;
 import pers.zhzh.consts.spring.boot.autoconfigure.service.SensitiveWordBean;
@@ -22,11 +23,13 @@ public class DemoApplicationTests {
     private MultiDictionaryBean multiDictionaryBean;
     @Resource
     private SensitiveWordBean sensitiveWordBean;
+    @Resource
+    private DFAsensitiveWordBean dfAsensitiveWordBean;
     private long begin;
 
     @Test
     public void contextLoads() {
-        dicSerr();
+//        dicSerr();
         sensitiveWordSerr();
     }
 
@@ -38,7 +41,10 @@ public class DemoApplicationTests {
     }
 
     private void sensitiveWordSerr(){
-        System.err.println(sensitiveWordBean.getCensorWord("诱惑小泽玛利亚，吗卖批，草泥马狗日的"));
+        System.err.println(sensitiveWordBean.getCensorWord("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
+        System.err.println(sensitiveWordBean.getCensorWordText("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
+        System.err.println(dfAsensitiveWordBean.getCensorWord("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
+        System.err.println(sensitiveWordBean.getCensorWordText("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
     }
 
     @Before
