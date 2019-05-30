@@ -10,7 +10,9 @@ import pers.zhzh.consts.spring.boot.autoconfigure.service.*;
 @Configuration
 @ConditionalOnClass(value = {DictionaryBean.class, SensitiveWordBean.class})
 @EnableConfigurationProperties({ConstReaderProperties.class})
-@Import({DictionaryReader.class, MultiDictionaryReader.class, SensitiveWordFilter.class, DFAsensitiveWordFilter.class})
+@Import({DictionaryReader.class, MultiDictionaryReader.class,
+        SensitiveWordFilter.class, DFAsensitiveWordFilter.class,
+        ConstValueGetter.class})
 public class ConstReaderAutoConfigure {
 
 }

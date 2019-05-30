@@ -6,10 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import pers.zhzh.consts.spring.boot.autoconfigure.service.DFAsensitiveWordBean;
-import pers.zhzh.consts.spring.boot.autoconfigure.service.DictionaryBean;
-import pers.zhzh.consts.spring.boot.autoconfigure.service.MultiDictionaryBean;
-import pers.zhzh.consts.spring.boot.autoconfigure.service.SensitiveWordBean;
+import pers.zhzh.consts.spring.boot.autoconfigure.service.*;
 
 import javax.annotation.Resource;
 
@@ -17,6 +14,8 @@ import javax.annotation.Resource;
 @SpringBootTest
 public class DemoApplicationTests {
 
+    @Resource
+    private ConstValueBean constValueBean;
     @Resource
     private DictionaryBean dictionaryBean;
     @Resource
@@ -29,7 +28,8 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
-//        dicSerr();
+        System.err.println(constValueBean.getMac());
+        dicSerr();
         sensitiveWordSerr();
     }
 

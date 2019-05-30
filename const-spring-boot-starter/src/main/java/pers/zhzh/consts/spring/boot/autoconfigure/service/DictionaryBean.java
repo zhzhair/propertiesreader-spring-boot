@@ -1,7 +1,7 @@
 package pers.zhzh.consts.spring.boot.autoconfigure.service;
 
 import com.alibaba.fastjson.JSONObject;
-import pers.zhzh.consts.spring.boot.autoconfigure.util.DicToListUtil;
+import pers.zhzh.consts.spring.boot.autoconfigure.util.DicUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class DictionaryBean {
     }
 
     public List<Map<String,String>> getListMap(String key) {
-        return DicToListUtil.getCodeAndNames(this.getKeyObject(key));
+        return DicUtil.getCodeAndNames(this.getKeyObject(key));
     }
 
 }

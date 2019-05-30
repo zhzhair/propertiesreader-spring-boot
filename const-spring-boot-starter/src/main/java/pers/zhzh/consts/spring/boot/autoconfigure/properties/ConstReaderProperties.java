@@ -7,6 +7,7 @@ public class ConstReaderProperties {
 
     private Boolean dicEnable = false;
     private Boolean censorWordEnable = false;
+    private Boolean constValueEnable = false;
     private Dic dic;
     private CensorWord censorWord;
 
@@ -18,14 +19,36 @@ public class ConstReaderProperties {
             this.censorWord = new CensorWord();
         }
     }
+
     public class Dic{
         private String dicLocation = "/data/dic.json";
+
         public String getDicLocation() {
             return dicLocation;
         }
 
         public void setDicLocation(String dicLocation) {
             this.dicLocation = dicLocation;
+        }
+    }
+
+    public class DicForXML{
+        private String dicLocation = "/data/dic.json";
+        private int level = 3;
+        public String getDicLocation() {
+            return dicLocation;
+        }
+
+        public void setDicLocation(String dicLocation) {
+            this.dicLocation = dicLocation;
+        }
+
+        public int getLevel() {
+            return level;
+        }
+
+        public void setLevel(int level) {
+            this.level = level;
         }
     }
 
@@ -81,6 +104,14 @@ public class ConstReaderProperties {
 
     public void setCensorWordEnable(Boolean censorWordEnable) {
         this.censorWordEnable = censorWordEnable;
+    }
+
+    public Boolean getConstValueEnable() {
+        return constValueEnable;
+    }
+
+    public void setConstValueEnable(Boolean constValueEnable) {
+        this.constValueEnable = constValueEnable;
     }
 
     public Dic getDic() {

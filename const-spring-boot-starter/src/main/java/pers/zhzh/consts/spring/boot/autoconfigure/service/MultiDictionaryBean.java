@@ -1,7 +1,7 @@
 package pers.zhzh.consts.spring.boot.autoconfigure.service;
 
 import com.alibaba.fastjson.JSONObject;
-import pers.zhzh.consts.spring.boot.autoconfigure.util.DicToListUtil;
+import pers.zhzh.consts.spring.boot.autoconfigure.util.DicUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -37,6 +37,6 @@ public class MultiDictionaryBean {
     }
 
     public List<Map<String,String>> getTypeListMap(String type, String key) {
-        return DicToListUtil.getCodeAndNames(this.getTypeKeyObject(type,key));
+        return DicUtil.getCodeAndNames(this.getTypeKeyObject(type,key));
     }
 }

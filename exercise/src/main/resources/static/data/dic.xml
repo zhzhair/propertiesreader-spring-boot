@@ -1,0 +1,27 @@
+<Dics>
+    <dic id="id_type">
+        <code value="0">身份证</code>
+        <code value="1">军官证</code>
+        <code value="2">护照</code>
+    </dic>
+    <dic id="sex_type">
+        <code value="0">未知</code>
+        <code value="1">男</code>
+        <code value="2">女</code>
+    </dic>
+    <dic id="bool_flag">
+        <code value="0">否</code>
+        <code value="1">是</code>
+        <code value="2">待确认</code>
+    </dic>
+    <dic id="login_channel">
+        <code value="1">人脸识别登录</code>
+        <code value="2">指纹登录</code>
+        <code value="3">账号密码登录</code>
+    </dic>
+    <dic id="query_type">
+        <code value="1">查询已存报告</code>
+        <code value="2">查询第三方报告</code>
+        <code value="3">查询采集数据</code>
+    </dic>
+</Dics>
