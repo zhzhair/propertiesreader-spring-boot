@@ -6,7 +6,9 @@ import com.example.demo.common.enums.Gender;
 import com.example.demo.common.enums.GenderEnum;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import pers.zhzh.consts.spring.boot.autoconfigure.service.ConstValueBean;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("enums")
 public class EnumsController extends BaseController {
+
+    @Resource
+    private ConstValueBean constValueBean;
 
     @RequestMapping(value = "/findNameByCode", method = {RequestMethod.GET}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public BaseResponse<String> findNameByCode(@RequestParam(value = "code") Integer code) {
@@ -45,11 +50,20 @@ public class EnumsController extends BaseController {
         List<Map<String,String>> list = new ArrayList<>();
         for (GenderEnum genderEnum : GenderEnum.values()) {
             Map<String,String> map = new HashMap<>();
-            map.put("code",genderEnum.getCode());
             map.put("name",genderEnum.getDescription());
+            map.put("code",genderEnum.getCode());
             list.add(map);
         }
         baseResponse.setData(list);
+        return baseResponse;
+    }
+
+    @RequestMapping(value = "/getMac", method = {RequestMethod.GET}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public BaseResponse<String> getMac() {
+        BaseResponse<String> baseResponse = new BaseResponse<>();
+        baseResponse.setCode(0);
+        baseResponse.setMsg("success");
+        baseResponse.setData(constValueBean.getMac());
         return baseResponse;
     }
 }

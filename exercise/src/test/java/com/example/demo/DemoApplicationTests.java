@@ -28,9 +28,11 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
+        begin = System.currentTimeMillis();
         System.err.println(constValueBean.getMac());
         dicSerr();
         sensitiveWordSerr();
+        System.err.println("use " + (System.currentTimeMillis() - begin) + " milliseconds");
     }
 
     private void dicSerr(){
@@ -44,7 +46,7 @@ public class DemoApplicationTests {
         System.err.println(sensitiveWordBean.getCensorWord("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
         System.err.println(sensitiveWordBean.getCensorWordText("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
         System.err.println(dfAsensitiveWordBean.getCensorWord("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
-        System.err.println(sensitiveWordBean.getCensorWordText("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
+        System.err.println(dfAsensitiveWordBean.getCensorWordText("诱惑小泽玛利亚，妈卖批，草泥马狗日的"));
     }
 
     @Before
@@ -53,6 +55,6 @@ public class DemoApplicationTests {
     }
     @After
     public void after(){
-        System.err.println("use " + (System.currentTimeMillis() - begin) + " milliseconds");
+//        System.err.println("use " + (System.currentTimeMillis() - begin) + " milliseconds");
     }
 }

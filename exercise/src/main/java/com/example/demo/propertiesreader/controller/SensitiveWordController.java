@@ -18,7 +18,7 @@ public class SensitiveWordController extends BaseController {
     @Resource
     private DFAsensitiveWordBean dfaSensitiveWordBean;
 
-    @RequestMapping(value = "/getSensorWord",method = {RequestMethod.POST})
+    @RequestMapping(value = "/getSensorWord",method = {RequestMethod.GET})
     public BaseResponse<Set<String>> getSensorWord(String text) {
         BaseResponse<Set<String>> baseResponse = new BaseResponse<>();
         Set<String> set = sensitiveWordBean.getCensorWord(text);
@@ -33,7 +33,7 @@ public class SensitiveWordController extends BaseController {
         return baseResponse;
     }
 
-    @RequestMapping(value = "/getDFASensorWord",method = {RequestMethod.POST})
+    @RequestMapping(value = "/getDFASensorWord",method = {RequestMethod.GET})
     public BaseResponse<Set<String>> getDFASensorWord(String text) {
         BaseResponse<Set<String>> baseResponse = new BaseResponse<>();
         Set<String> set = dfaSensitiveWordBean.getCensorWord(text);
