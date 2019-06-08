@@ -19,9 +19,22 @@ public class DFAfilterUtil {
         String returnStr = text;
         Set<String> set = getSensitiveWordAll(text,map);
         for (String string : set) {
-            returnStr = returnStr.replace(string,"**");
+            returnStr = returnStr.replace(string,getStars(string.length()));
         }
         return returnStr;
+    }
+
+    /**
+     * 将每隔字符替换成*
+     * @param length 长度
+     * @return *...
+     */
+    private static String getStars(int length){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            stringBuilder.append("*");
+        }
+        return stringBuilder.toString();
     }
 
     /**
